@@ -10,17 +10,17 @@ config :recollect,
   ecto_repos: [Recollect.Repo]
 
 # Configures the endpoint
-config :recollect, RecollectWeb.Endpoint,
+config :recollect, Recollect.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "4aNjvyCUZDIdKHMchFWICEtmc+iG6KTBT2bYDcnKK9zlv6g0J9fnSscCILMMvxeS",
-  render_errors: [view: RecollectWeb.ErrorView, accepts: ~w(html json)],
+  secret_key_base: "iRKOFokodtO9qRjVTC5DbQlEb5vmJRwcqhP9JWvWPpwjOulH8xdFyed9ooNWUl0I",
+  render_errors: [view: Recollect.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Recollect.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
-  metadata: [:user_id]
+  metadata: [:request_id]
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
