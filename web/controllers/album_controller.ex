@@ -19,6 +19,19 @@ defmodule Recollect.AlbumController do
   end
 
   def create(conn, %{"album" => album_params}) do
+    artist_name = album_params["artist_id"]
+    artist = Repo.get_by(Artist, name: artist_name)
+    if artist == nil do
+      artist = Repo.insert!(%Artist{name: artist_name})
+    end
+    album_params = Map.put(album_params, "artist_id", artist.id)
+
+    label_name = album_params["label_id"]
+    label = Repo.get_by(Label, name: album_params["label_id"])
+    if label == nil do
+      label = Repo.insert!(%Label{name: label_name})
+    end
+    album_params = Map.put(album_params, "label_id", label.id)
     changeset = Album.changeset(%Album{}, album_params)
 
     case Repo.insert(changeset) do

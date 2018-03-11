@@ -8,8 +8,6 @@
       <th>Title</th>
       <th>Year</th>
       <th>Condition</th>
-      <th>Liner notes</th>
-
       <th></th>
     </tr>
   </thead>
@@ -21,7 +19,6 @@
       <td><%= album.title %></td>
       <td><%= album.year %></td>
       <td><%= album.condition %></td>
-      <td><%= album.liner_notes %></td>
 
       <td class="text-right">
         <span><%= link "Show", to: album_path(@conn, :show, album), class: "btn btn-default btn-xs" %></span>

@@ -4,12 +4,12 @@
 
   <li>
     <strong>Artist:</strong>
-    <%= @album.artist_id %>
+    <%= artist_name(@album) %>
   </li>
 
   <li>
     <strong>Label:</strong>
-    <%= @album.label_id %>
+    <%= label_name(@album) %>
   </li>
 
   <li>
