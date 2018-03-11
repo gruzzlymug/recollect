@@ -1,0 +1,36 @@
+<h2>Listing albums</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Artist</th>
+      <th>Label</th>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Condition</th>
+      <th>Liner notes</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for album <- @albums do %>
+    <tr>
+      <td><%= album.artist_id %></td>
+      <td><%= album.label_id %></td>
+      <td><%= album.title %></td>
+      <td><%= album.year %></td>
+      <td><%= album.condition %></td>
+      <td><%= album.liner_notes %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: album_path(@conn, :show, album), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: album_path(@conn, :edit, album), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: album_path(@conn, :delete, album), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New album", to: album_path(@conn, :new) %></span>

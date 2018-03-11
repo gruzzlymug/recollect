@@ -1,0 +1,38 @@
+<h2>Show album</h2>
+
+<ul>
+
+  <li>
+    <strong>Artist:</strong>
+    <%= @album.artist_id %>
+  </li>
+
+  <li>
+    <strong>Label:</strong>
+    <%= @album.label_id %>
+  </li>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @album.title %>
+  </li>
+
+  <li>
+    <strong>Year:</strong>
+    <%= @album.year %>
+  </li>
+
+  <li>
+    <strong>Condition:</strong>
+    <%= @album.condition %>
+  </li>
+
+  <li>
+    <strong>Liner notes:</strong>
+    <%= @album.liner_notes %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: album_path(@conn, :edit, @album) %></span>
+<span><%= link "Back", to: album_path(@conn, :index) %></span>
