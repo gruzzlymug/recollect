@@ -9,7 +9,7 @@
     <%= label f, :artist_id, class: "control-label" %>
     <input type="text" name="album[artist_id]" list="artists" class="form-control" />
     <datalist id="artists">
-      <%= for {name, id} <- @artists do %>
+      <%= for {name, _id} <- @artists do %>
         <option><%= name %></option>
       <% end %>
     </datalist>
@@ -26,7 +26,7 @@
     <%= label f, :label_id, class: "control-label" %>
     <input type="text" name="album[label_id]" list="labels" class="form-control" />
     <datalist id="labels">
-      <%= for {name, id} <- @labels do %>
+      <%= for {name, _id} <- @labels do %>
         <option><%= name %></option>
       <% end %>
     </datalist>
