@@ -6,9 +6,21 @@
   <% end %>
 
   <div class="form-group">
+    <%= label f, :artist_id, class: "control-label" %>
+    <%= select f, :artist_id, @artists, class: "form-control", prompt: "Artist" %>
+    <%= error_tag f, :artist_id %>
+  </div>
+
+  <div class="form-group">
     <%= label f, :title, class: "control-label" %>
     <%= text_input f, :title, class: "form-control" %>
     <%= error_tag f, :title %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :label_id, class: "control-label" %>
+    <%= select f, :label_id, @labels, class: "form-control", prompt: "Label" %>
+    <%= error_tag f, :label_id %>
   </div>
 
   <div class="form-group">

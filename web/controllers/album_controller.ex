@@ -2,6 +2,11 @@ defmodule Recollect.AlbumController do
   use Recollect.Web, :controller
 
   alias Recollect.Album
+  alias Recollect.Artist
+  alias Recollect.Label
+
+  plug :load_artists when action in [:new, :create, :edit, :update]
+  plug :load_labels when action in [:new, :create, :edit, :update]
 
   def index(conn, _params) do
     albums = Repo.all(Album)
@@ -61,5 +66,23 @@ defmodule Recollect.AlbumController do
     conn
     |> put_flash(:info, "Album deleted successfully.")
     |> redirect(to: album_path(conn, :index))
+  end
+
+  defp load_artists(conn, _) do
+    query =
+      Artist
+      |> Artist.alphabetical
+      |> Artist.names_and_ids
+    artists = Repo.all query
+    assign(conn, :artists, artists)
+  end
+
+  defp load_labels(conn, _) do
+    query =
+      Label
+      |> Label.alphabetical
+      |> Label.names_and_ids
+    labels = Repo.all query
+    assign(conn, :labels, labels)
   end
 end

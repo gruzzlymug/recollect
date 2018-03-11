@@ -17,7 +17,8 @@ defmodule Recollect.Album do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:title, :year, :condition, :liner_notes])
-    |> validate_required([:title, :year, :condition, :liner_notes])
+    |> cast(params, [:artist_id, :label_id, :title, :year, :condition, :liner_notes])
+    |> validate_required([:artist_id, :label_id, :title, :year, :condition, :liner_notes])
+    # |> assoc_constraint(:artist)
   end
 end
