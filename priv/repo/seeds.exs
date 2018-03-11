@@ -9,3 +9,14 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will halt execution if something goes wrong.
+alias Recollect.Repo
+alias Recollect.Artist
+alias Recollect.Label
+
+for artist <- ~w(Radiohead Boredoms) do
+  Repo.insert!(%Artist{name: artist})
+end
+
+for label <- ~w(Parlophone Avant) do
+  Repo.insert!(%Label{name: label})
+end
