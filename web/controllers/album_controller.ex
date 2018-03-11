@@ -9,7 +9,10 @@ defmodule Recollect.AlbumController do
   plug :load_labels when action in [:new, :create, :edit, :update]
 
   def index(conn, _params) do
-    albums = Repo.all(Album)
+    albums = Album
+      |> Repo.all
+      |> Repo.preload(:artist)
+      |> Repo.preload(:label)
     render(conn, "index.html", albums: albums)
   end
 
@@ -45,7 +48,11 @@ defmodule Recollect.AlbumController do
   end
 
   def show(conn, %{"id" => id}) do
-    album = Repo.get!(Album, id)
+    # album = Repo.get!(Album, id)
+    album = Album
+      |> Repo.get!(id)
+      |> Repo.preload(:artist)
+      |> Repo.preload(:label)
     render(conn, "show.html", album: album)
   end
 

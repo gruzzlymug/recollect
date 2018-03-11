@@ -14,8 +14,8 @@
   <tbody>
 <%= for album <- @albums do %>
     <tr>
-      <td><%= artist_name(album) %></td>
-      <td><%= label_name(album) %></td>
+      <td><%= album.artist.name %></td>
+      <td><%= album.label.name %></td>
       <td><%= album.title %></td>
       <td><%= album.year %></td>
       <td><%= album.condition %></td>
