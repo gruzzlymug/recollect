@@ -7,7 +7,12 @@
 
   <div class="form-group">
     <%= label f, :artist_id, class: "control-label" %>
-    <%= select f, :artist_id, @artists, class: "form-control", prompt: "Artist" %>
+    <input type="text" name="album[artist_id]" list="artists" class="form-control" />
+    <datalist id="artists">
+      <%= for {name, id} <- @artists do %>
+        <option><%= name %></option>
+      <% end %>
+    </datalist>
     <%= error_tag f, :artist_id %>
   </div>
 
@@ -19,7 +24,12 @@
 
   <div class="form-group">
     <%= label f, :label_id, class: "control-label" %>
-    <%= select f, :label_id, @labels, class: "form-control", prompt: "Label" %>
+    <input type="text" name="album[label_id]" list="labels" class="form-control" />
+    <datalist id="labels">
+      <%= for {name, id} <- @labels do %>
+        <option><%= name %></option>
+      <% end %>
+    </datalist>
     <%= error_tag f, :label_id %>
   </div>
 
