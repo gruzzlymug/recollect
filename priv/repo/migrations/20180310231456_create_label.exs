@@ -5,7 +5,7 @@ defmodule Recollect.Repo.Migrations.CreateLabel do
     create table(:labels) do
       add :name, :string
 
-      timestamps
+      timestamps()
     end
 
     create unique_index(:labels, [:name])

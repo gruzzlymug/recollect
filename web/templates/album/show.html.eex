@@ -4,17 +4,17 @@
 
   <li>
     <strong>Artist:</strong>
-    <%= @album.artist.name %>
-  </li>
-
-  <li>
-    <strong>Label:</strong>
-    <%= @album.label.name %>
+    <%= @album.artist %>
   </li>
 
   <li>
     <strong>Title:</strong>
     <%= @album.title %>
+  </li>
+
+  <li>
+    <strong>Label:</strong>
+    <%= @album.label %>
   </li>
 
   <li>
@@ -25,11 +25,6 @@
   <li>
     <strong>Condition:</strong>
     <%= @album.condition %>
-  </li>
-
-  <li>
-    <strong>Liner notes:</strong>
-    <%= @album.liner_notes %>
   </li>
 
 </ul>

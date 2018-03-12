@@ -5,7 +5,7 @@ defmodule Recollect.Repo.Migrations.CreateArtist do
     create table(:artists) do
       add :name, :string
 
-      timestamps
+      timestamps()
     end
 
     create unique_index(:artists, [:name])
