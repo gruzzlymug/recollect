@@ -20,6 +20,12 @@ defmodule Recollect.Router do
     resources "/albums", AlbumController
   end
 
+  scope "/csv", Recollect do
+    pipe_through :browser # Use the default browser stack
+
+    get "/albums", CsvController, :export_albums
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", Recollect do
   #   pipe_through :api

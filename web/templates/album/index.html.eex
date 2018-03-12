@@ -31,4 +31,5 @@
   </tbody>
 </table>
 
-<span><%= link "New album", to: album_path(@conn, :new) %></span>
+<span><%= link "New Album", to: album_path(@conn, :new) %></span> |
+<span><%= link "Download CSV", to: csv_path(@conn, :export) %></span>
