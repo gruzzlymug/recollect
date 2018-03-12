@@ -4,7 +4,7 @@ defmodule Recollect.Artist do
   schema "artists" do
     field :name, :string
 
-    has_many :albums, Recollect.Album
+    # has_many :albums, Recollect.Album
 
     timestamps()
   end

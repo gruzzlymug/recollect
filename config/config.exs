@@ -17,6 +17,9 @@ config :recollect, Recollect.Endpoint,
   pubsub: [name: Recollect.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
+config :scrivener_html,
+  routes_helper: Recollect.Router.Helpers
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

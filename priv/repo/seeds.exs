@@ -13,6 +13,11 @@ alias Recollect.Repo
 alias Recollect.Album
 
 #Repo.insert!(%Album{title: "", artist: "", label: "", year: 1990, condition: "Good"})
+Repo.insert!(%Album{title: "Rid of Me", artist: "PJ Harvey", label: "Island", year: 1993, condition: "Good"})
+Repo.insert!(%Album{title: "Who Sold My Generation", artist: "Night Beats", label: "Heavenly", year: 2016, condition: "Good"})
+Repo.insert!(%Album{title: "American Ghetto", artist: "Portugal. The Man", label: "Equal Vision", year: 2010, condition: "Good"})
+Repo.insert!(%Album{title: "Evil Friends", artist: "Portugal. The Man", label: "Atlantic", year: 2013, condition: "Good"})
+Repo.insert!(%Album{title: "Evil Urges", artist: "My Morning Jacket", label: "ATO", year: 2008, condition: "Good"})
 Repo.insert!(%Album{title: "Sticky Fingers", artist: "Rolling Stones", label: "Rolling Stones", year: 1971, condition: "Good"})
 Repo.insert!(%Album{title: "Some Girls", artist: "Rolling Stones", label: "Rolling Stones", year: 1978, condition: "Good"})
 Repo.insert!(%Album{title: "Licensed to Ill", artist: "Beastie Boys", label: "Def Jam", year: 1986, condition: "Good"})

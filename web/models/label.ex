@@ -4,7 +4,7 @@ defmodule Recollect.Label do
   schema "labels" do
     field :name, :string
 
-    has_many :albums, Recollect.Album
+    # has_many :albums, Recollect.Album
 
     timestamps()
   end
