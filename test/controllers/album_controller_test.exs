@@ -2,7 +2,7 @@ defmodule Recollect.AlbumControllerTest do
   use Recollect.ConnCase
 
   alias Recollect.Album
-  @valid_attrs %{condition: "some condition", liner_notes: "some liner_notes", title: "some title", year: 42}
+  @valid_attrs %{artist: "some artist", condition: "some condition", label: "some label", title: "some title", year: 42}
   @invalid_attrs %{}
 
   test "lists all entries on index", %{conn: conn} do

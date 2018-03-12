@@ -4,19 +4,20 @@
   <thead>
     <tr>
       <th>Artist</th>
-      <th>Label</th>
       <th>Title</th>
+      <th>Label</th>
       <th>Year</th>
       <th>Condition</th>
+
       <th></th>
     </tr>
   </thead>
   <tbody>
 <%= for album <- @albums do %>
     <tr>
-      <td><%= album.artist.name %></td>
-      <td><%= album.label.name %></td>
+      <td><%= album.artist %></td>
       <td><%= album.title %></td>
+      <td><%= album.label %></td>
       <td><%= album.year %></td>
       <td><%= album.condition %></td>
 

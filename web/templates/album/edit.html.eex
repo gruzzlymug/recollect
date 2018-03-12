@@ -1,6 +1,6 @@
 <h2>Edit album</h2>
 
-<%= render "form.html", changeset: @changeset, artists: @artists, labels: @labels,
+<%= render "form.html", changeset: @changeset,
                         action: album_path(@conn, :update, @album) %>
 
 <span><%= link "Back", to: album_path(@conn, :index) %></span>

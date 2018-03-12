@@ -6,14 +6,9 @@
   <% end %>
 
   <div class="form-group">
-    <%= label f, :artist_id, class: "control-label" %>
-    <input type="text" id="album_artist_id" name="album[artist_id]" list="artists" class="form-control" />
-    <datalist id="artists">
-      <%= for {name, _id} <- @artists do %>
-        <option><%= name %></option>
-      <% end %>
-    </datalist>
-    <%= error_tag f, :artist_id %>
+    <%= label f, :artist, class: "control-label" %>
+    <%= text_input f, :artist, class: "form-control" %>
+    <%= error_tag f, :artist %>
   </div>
 
   <div class="form-group">
@@ -23,14 +18,9 @@
   </div>
 
   <div class="form-group">
-    <%= label f, :label_id, class: "control-label" %>
-    <input type="text" name="album[label_id]" list="labels" class="form-control" />
-    <datalist id="labels">
-      <%= for {name, _id} <- @labels do %>
-        <option><%= name %></option>
-      <% end %>
-    </datalist>
-    <%= error_tag f, :label_id %>
+    <%= label f, :label, class: "control-label" %>
+    <%= text_input f, :label, class: "form-control" %>
+    <%= error_tag f, :label %>
   </div>
 
   <div class="form-group">
@@ -43,12 +33,6 @@
     <%= label f, :condition, class: "control-label" %>
     <%= text_input f, :condition, class: "form-control" %>
     <%= error_tag f, :condition %>
-  </div>
-
-  <div class="form-group">
-    <%= label f, :liner_notes, class: "control-label" %>
-    <%= textarea f, :liner_notes, class: "form-control" %>
-    <%= error_tag f, :liner_notes %>
   </div>
 
   <div class="form-group">
