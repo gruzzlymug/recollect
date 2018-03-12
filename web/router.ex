@@ -23,7 +23,7 @@ defmodule Recollect.Router do
   scope "/csv", Recollect do
     pipe_through :browser # Use the default browser stack
 
-    get "/", CsvController, :export
+    get "/albums", CsvController, :export_albums
   end
 
   # Other scopes may use custom stacks.

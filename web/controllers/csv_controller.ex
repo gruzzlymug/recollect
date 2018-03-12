@@ -3,7 +3,7 @@ defmodule Recollect.CsvController do
   alias Recollect.Album
   alias Recollect.Repo
 
-  def export(conn, _params) do
+  def export_albums(conn, _params) do
     conn
     |> put_resp_content_type("text/csv")
     |> put_resp_header("content-disposition", "attachment; filename=\"albums.csv\"")
