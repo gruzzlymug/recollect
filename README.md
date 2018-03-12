@@ -1,9 +1,22 @@
 [ ![Codeship Status for gruzzlymug/recollect](https://app.codeship.com/projects/77807c10-07bc-0136-980e-527265f216f5/status?branch=master)](https://app.codeship.com/projects/281042)
 
-# Recollect
+# Welcome to Recollect
 
-To start your Phoenix app:
+Recollect is a simple Record Collection Manager written in [Elixir](https://elixir-lang.org/) using the [Phoenix Framework](http://phoenixframework.org/). It uses PostgreSQL.
 
+Elixir and Phoenix have been inspired by and compared to Ruby and Rails, but they are [faster](https://littlelines.com/blog/2014/07/08/elixir-vs-ruby-showdown-phoenix-vs-rails). See also [here](https://github.com/mroth/phoenix-showdown).
+
+## Third-Party Software
+
+* [Scrivener](https://github.com/drewolson/scrivener) - for pagination
+
+## Getting Started
+
+To start the application:
+
+  * Install Elixir
+  * Install Phoenix
+  * Clone the repository
   * Install dependencies with `mix deps.get`
   * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
   * Install Node.js dependencies with `npm install`
