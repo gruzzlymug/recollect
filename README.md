@@ -1,3 +1,5 @@
+[ ![Codeship Status for gruzzlymug/recollect](https://app.codeship.com/projects/77807c10-07bc-0136-980e-527265f216f5/status?branch=master)](https://app.codeship.com/projects/281042)
+
 # Recollect
 
 To start your Phoenix app:
