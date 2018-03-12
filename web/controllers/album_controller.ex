@@ -22,18 +22,10 @@ defmodule Recollect.AlbumController do
   end
 
   def create(conn, %{"album" => album_params}) do
-    artist_name = album_params["artist_id"]
-    artist = Repo.get_by(Artist, name: artist_name)
-    if artist == nil do
-      artist = Repo.insert!(%Artist{name: artist_name})
-    end
+    artist = find_or_create_artist(album_params["artist_id"])
     album_params = Map.put(album_params, "artist_id", artist.id)
 
-    label_name = album_params["label_id"]
-    label = Repo.get_by(Label, name: album_params["label_id"])
-    if label == nil do
-      label = Repo.insert!(%Label{name: label_name})
-    end
+    label = find_or_create_label(album_params["label_id"])
     album_params = Map.put(album_params, "label_id", label.id)
     changeset = Album.changeset(%Album{}, album_params)
 
@@ -44,6 +36,21 @@ defmodule Recollect.AlbumController do
         |> redirect(to: album_path(conn, :show, album))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
+    end
+  end
+
+  defp find_or_create_artist(artist_name) do
+    artist = Repo.get_by(Artist, name: artist_name)
+    if artist == nil do
+      artist = Repo.insert!(%Artist{name: artist_name})
+    end
+    artist
+  end
+
+  defp find_or_create_label(label_name) do
+    label = Repo.get_by(Label, name: label_name)
+    if label == nil do
+      label = Repo.insert!(%Label{name: label_name})
     end
   end
 

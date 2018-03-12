@@ -7,7 +7,7 @@
 
   <div class="form-group">
     <%= label f, :artist_id, class: "control-label" %>
-    <input type="text" name="album[artist_id]" list="artists" class="form-control" />
+    <input type="text" id="album_artist_id" name="album[artist_id]" list="artists" class="form-control" />
     <datalist id="artists">
       <%= for {name, _id} <- @artists do %>
         <option><%= name %></option>
