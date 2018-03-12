@@ -3,9 +3,11 @@ defmodule Recollect.AlbumController do
 
   alias Recollect.Album
 
-  def index(conn, _params) do
-    albums = Repo.all(Album)
-    render(conn, "index.html", albums: albums)
+  def index(conn, params) do
+    # albums = Repo.all(Album)
+    page = Album
+           |> Repo.paginate(params)
+    render(conn, "index.html", albums: page.entries, page: page)
   end
 
   def new(conn, _params) do

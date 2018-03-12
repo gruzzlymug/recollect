@@ -20,7 +20,7 @@ defmodule Recollect.Mixfile do
   def application do
     [
       mod: {Recollect, []},
-      extra_applications: [:logger]
+      extra_applications: [:logger, :scrivener_ecto, :scrivener_html]
     ]
   end
 
@@ -41,7 +41,9 @@ defmodule Recollect.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
-      {:csv, "~> 1.4.0"}
+      {:csv, "~> 1.4.0"},
+      {:scrivener_ecto, "~> 1.3"},
+      {:scrivener_html, "~> 1.7"}
     ]
   end
 
